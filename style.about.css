@@ -3,21 +3,20 @@ body {
     flex-direction: column;
     background-color: #F5F0DD;
     margin: 0;
+    overflow: hidden;
 }
 
 #bodycontent {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 5%;
 }
   
 #navbar {
     display: flex;
-    flex-direction: row;
     height: 56px;
+    align-items: center;
     justify-content: space-between;
     background-color: #C13D4C;
     padding-top: 0.5%;
@@ -32,6 +31,15 @@ body {
     align-items: center;
     height: auto;
     justify-content: flex-end;
+}
+
+svg {
+    display: flex;
+    align-self: stretch;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
 }
   
 #navigation a {
@@ -92,109 +100,139 @@ h4 {
 
 p {
     font-family: 'Sora', sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 400;
 }
 
 .wrap {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 50%;
+    align-items: center;
+    height: 60px;
+    background-color: #C13D4C;
+    width: 20%;
+    min-width: 300px;
     overflow: hidden;
 }
   
 .box {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    height: 60px;
+    flex: 1 0 100%;
 }
-  
+
 .logo {
-    display: flex;
-    max-width: 50%;
-    min-width: 30%;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 2;
     cursor: pointer;
-    align-items: flex-start;
 }
   
-  .hid-box {
+.hid-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
+    align-items: flex-start;
     flex: 1 0 100%;
-    align-items: center;
-    height: 56px;
-    overflow: auto;
+    height: 60px;
+    width: 20%;
+    padding: 0 1rem 0 calc(56px * 1.5);
     opacity: 0;
     transform: translateX(-100%);
     transition: 1s ease;
-    margin: 0;
-    font-family: 'Sora', sans-serif;
     color: #F5F0DD;
-    font-size: 24px;
 }
   
-.logo:hover ~ .hid-box, .hid-box:hover {
-    transform: translateX(-5%);
+.box:hover ~ .hid-box, .hid-box:hover {
+    transform: translateX(-80%);
     opacity: 1;
 }
 
 .title {
     display: inline-flex;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     border: 4px solid #C13D4C;
     border-radius: 40px;
     color: #C13D4C;
-    padding-left: 16%;
-    padding-right: 16%;
+    height: 30%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .subtitle {
-    display: flex;
+    display: inline-flex;
     z-index: 2;
     background-color: #EE9F9A;
     justify-content: center;
     align-items: center;
-    transform: translateY(-40%);
-    height: 30%;
+    transform: translateY(-30%);
+    height: 18%;
+    width: 30%;
     padding-left: 16%;
     padding-right: 16%;
     color: #F5F0DD;
     border-radius: 16px;
+    text-wrap: nowrap;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }
 
 #content {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+#contentrow {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .image {
     display: flex;
-    width: 20%;
-    height: 20%;;
+    justify-content: center;
+    align-content: center;
+    width: 40%;
+    height: 400px;
 }
 
-ul {
-    background-color: #373738;
-    display: inline-block;
-    vertical-align: top;
-    padding: 10%;
+.image img {
+    border-radius: 20px;
+    border-style: dashed;
+    margin: 8px;
+    border-color: #EE9F9A;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     h1 {
       font-size: 36px;
     }
 
     .title {
+        height: 18%;
         border-radius: 30px;
+    }
+
+    .title h1 {
+        font-size: px;
+    }
+
+    .subtitle {
+        height: 10%;
     }
   
     h3 {
@@ -204,6 +242,10 @@ ul {
     h4 {
       font-size: 16px;
     }
+
+    .image {
+        height: 260px;
+    }
   
     #navigation a {
       font-size: 16px;
@@ -212,8 +254,4 @@ ul {
     #navigation a.active {
       border-radius: 8px;
     }
-  
-    .textandbutton h4 {
-      font-size: 16px;
-    }
-}
+} */
